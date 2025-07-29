@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar</title>
+</head>
+<body>
+    <form id="register">
+        <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input
+            type="text"
+            class="form-control"
+            name="nama"
+            id="nama"
+            aria-describedby="helpId"
+            placeholder=""
+        />
+        <small id="helpId" class="form-text text-muted"></small>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            aria-describedby="helpId"
+            placeholder=""
+        />
+        <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    
+    <div class="mb-3">
+        <label for="tanggal" class="form-label">Tanggal Lahir</label>
+        <input
+            type="date"
+            class="form-control"
+            name="tanggal"
+            id="tanggal"
+            aria-describedby="helpId"
+            placeholder=""
+        />
+        <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    
+    <button type="submit">Kirim</button>
+    </form>
+</body>
+    <script>
+        document.getElementById('register').addEventListener('submit', function (e) {
+            e.preventDefault();//Mencegah form dikirim
+
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const tanggal = document.getElementById('tanggal').value;
+
+            const result = `Data yang Anda masukan:
+                            Nama:${nama}
+                            Email:${email}
+                            Tanggal Lahir:${tanggal}`;
+
+            alert(result);
+        });
+    </script>
+</html>
